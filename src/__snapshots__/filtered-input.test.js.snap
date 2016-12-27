@@ -1,0 +1,16 @@
+exports[`FilteredInput with all props 1`] = `
+<input
+  id="test"
+  maxLength="3"
+  name="test"
+  onChange={[Function]}
+  type="text"
+  value="" />
+`;
+
+exports[`FilteredInput with only required props 1`] = `
+<input
+  onChange={[Function]}
+  type="text"
+  value="" />
+`;
