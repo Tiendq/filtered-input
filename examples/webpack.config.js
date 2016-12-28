@@ -6,13 +6,10 @@ module.exports = {
       exclude: /node_modules/
     }]
   },
-  entry: "./index.js",
+  entry: './index.js',
   output: {
-    filename: "index.js",
-    path: "./dist",
-    publicPath: "/dist"
-  },
-  resolve: {
-    fallback: "/usr/local/lib/node_modules"
+    filename: 'index.js',
+    path: './dist',
+    publicPath: '/dist'
   }
 };

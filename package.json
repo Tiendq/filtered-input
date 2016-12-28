@@ -16,7 +16,7 @@
     "validation"
   ],
   "scripts": {
-    "build": "webpack --config webpack.config.production.js",
+    "build": "webpack -p",
     "test": "jest --watch",
     "watch": "webpack --progress --colors --watch"
   },
