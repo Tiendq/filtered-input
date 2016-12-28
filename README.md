@@ -22,17 +22,21 @@ ReactDOM.render(
 Besides below properties, you could add any HTML input attributes as usual except `value`.
 
 #### `type`
-Input type e.g. text, email. `Required`.
+Input type e.g. text, email. `Required`
+
 #### `filterPattern`
-A RegEx pattern to filter which characters are allowed to enter in the input. `Required`.
+A RegEx pattern to filter which characters are allowed to enter in the input. `Required`
+
 #### `validatePattern`
-A RegEx pattern to validate current input value, relied on [validator.matches](https://github.com/chriso/validator.js). `Required`.
+A RegEx pattern to validate current input value, relied on [validator.matches](https://github.com/chriso/validator.js). `Required`
+
 #### `onFilter`
 Called on change event with current `value` and validation result `passed` if `validatePattern` is supplied. You could use it to get input value or change input control appearance based its validation state.
 
 ## Examples
 1. Run `yarn start` from `examples` folder
 2. Visit `http://localhost:8080`
+
 
 Copyright (c) 2016 Tien Do
 
