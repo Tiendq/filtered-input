@@ -8,6 +8,13 @@ exports[`FilteredInput with all props 1`] = `
   value="" />
 `;
 
+exports[`FilteredInput with initial value 1`] = `
+<input
+  onChange={[Function]}
+  type="text"
+  value="Tien" />
+`;
+
 exports[`FilteredInput with only required props 1`] = `
 <input
   onChange={[Function]}

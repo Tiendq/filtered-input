@@ -11,36 +11,44 @@ describe('FilteredInput', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('with all props', () => {
+  test('with initial value', () => {
     const tree = renderer.create(
-      <FilteredInput type="text" id="test" name="test" filterPattern="^[a-z]+$" validatePattern="^[a-z]{3}$" onFilter={() => true} maxLength="3" />
+      <FilteredInput type="text" filterPattern="^[a-z]+$" value="Tien" />
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
-  test('onFilter is always passed if NO validatePattern supplied', () => {
-    let onFilter = jest.fn();
-
+  test('with all props', () => {
     const tree = renderer.create(
-      <FilteredInput type="text" filterPattern="^[a-z]+$" onFilter={onFilter} />
+      <FilteredInput type="text" id="test" name="test" filterPattern="^[a-z]+$" validatePattern="^[a-z]{3}$" onChange={() => true} maxLength="3" />
     ).toJSON();
 
-    tree.props.onChange({ target: { value: 'tien' }});
-    expect(onFilter).toHaveBeenCalledWith('tien', true);
+    expect(tree).toMatchSnapshot();
   });
 
-  test('onFilter called with validatePattern', () => {
-    let onFilter = jest.fn();
+  test('onChange is always passed if NO validatePattern supplied', () => {
+    let onChange = jest.fn();
 
     const tree = renderer.create(
-      <FilteredInput type="text" filterPattern="^[a-z]+$" validatePattern="^[a-z]{3}$" onFilter={onFilter} />
+      <FilteredInput type="text" filterPattern="^[a-z]+$" onChange={onChange} />
     ).toJSON();
 
     tree.props.onChange({ target: { value: 'tien' }});
-    expect(onFilter).toHaveBeenLastCalledWith('tien', false);
+    expect(onChange).toHaveBeenCalledWith('tien', true);
+  });
+
+  test('onChange called with validatePattern', () => {
+    let onChange = jest.fn();
+
+    const tree = renderer.create(
+      <FilteredInput type="text" filterPattern="^[a-z]+$" validatePattern="^[a-z]{3}$" onChange={onChange} />
+    ).toJSON();
+
+    tree.props.onChange({ target: { value: 'tien' }});
+    expect(onChange).toHaveBeenLastCalledWith('tien', false);
 
     tree.props.onChange({ target: { value: 'hoa' }});
-    expect(onFilter).toHaveBeenLastCalledWith('hoa', true);
+    expect(onChange).toHaveBeenLastCalledWith('hoa', true);
   });
 });

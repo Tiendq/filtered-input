@@ -13,7 +13,7 @@ import FilteredInput from 'filtered-input';
 
 ReactDOM.render(
   <form action="index.html" method="post" noValidate>
-    <FilteredInput id="fullname" name="fullname" type="text" filterPattern="^[a-z\s]+$" validatePattern="^[a-z\s]{5,20}$" onFilter={onFilter} />
+    <FilteredInput id="fullname" name="fullname" type="text" filterPattern="^[a-z\s]+$" validatePattern="^[a-z\s]{5,20}$" onChange={onChange} />
   </form>, document.getElementById("root")
 );
 ```
