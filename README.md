@@ -30,8 +30,11 @@ A RegEx pattern to filter which characters are allowed to enter in the input. `R
 #### `validatePattern`
 A RegEx pattern to validate current input value, relied on [validator.matches](https://github.com/chriso/validator.js). `Required`
 
-#### `onFilter`
+#### `onChange`
 Called on change event with current `value` and validation result `passed` if `validatePattern` is supplied. You could use it to get input value or change input control appearance based its validation state.
+
+#### `customFormatter`
+Called with current `value` to provide formatting capability e.g. 5000 becomes 5,000
 
 ## Examples
 1. Run `yarn start` from `examples` folder

@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import numeral from 'numeral';
 import FilteredInput from './filtered-input';
 
 describe('FilteredInput', () => {
@@ -50,5 +51,15 @@ describe('FilteredInput', () => {
 
     tree.props.onChange({ target: { value: 'hoa' }});
     expect(onChange).toHaveBeenLastCalledWith('hoa', true);
+  });
+
+  it('should allow formatting with a customFormatter', () => {
+    const customFormatter = (value) => value.length > 0 ? numeral(Number.parseInt(value, 10)).format('0,0') : '';
+
+    const tree = renderer.create(
+      <FilteredInput type="text" value="5000" filterPattern="^\d{0,6}$" validatePattern="^\d{1,6}$" customFormatter={customFormatter} />
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
   });
 });
