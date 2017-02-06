@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import numeral from 'numeral';
 import FilteredInput from '../dist/filtered-input';
 
 ReactDOM.render(
@@ -16,6 +17,10 @@ ReactDOM.render(
       <label htmlFor="zipcode">Zipcode</label>
       <FilteredInput id="zipcode" name="zipcode" type="text" filterPattern="^\d{0,5}$" validatePattern="^\d{5}$" onChange={(value, passed) => onChange('zipcode', value, passed)} maxLength="5" />
     </div>
+    <div>
+      <label htmlFor="salary">Salary</label>
+      <FilteredInput type="text" id="salary" name="salary" filterPattern="^\d{0,6}$" validatePattern="^\d{1,6}$" onChange={(value, passed) => onChange('salary', value, passed)} formatter={salaryFormatter} unformatter={salaryUnformatter} maxLength="7" />
+    </div>
   </form>, document.getElementById("root")
 );
 
@@ -28,4 +33,12 @@ function onChange(id, value, passed) {
     input.classList.remove('error');
   else
     input.classList.add('error');
+}
+
+function salaryFormatter(value) {
+  return value.length > 0 ? numeral(Number.parseInt(value, 10)).format('0,0') : '';
+}
+
+function salaryUnformatter(value) {
+  return value.replace(',', '');
 }
