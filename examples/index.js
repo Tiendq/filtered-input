@@ -19,7 +19,11 @@ ReactDOM.render(
     </div>
     <div>
       <label htmlFor="salary">Salary</label>
-      <FilteredInput type="text" id="salary" name="salary" filterPattern="^\d{0,6}$" validatePattern="^\d{1,6}$" onChange={(value, passed) => onChange('salary', value, passed)} formatter={salaryFormatter} unformatter={salaryUnformatter} maxLength="7" />
+      <FilteredInput type="text" id="salary" name="salary" value='50000' filterPattern="^\d{0,6}$" validatePattern="^\d{1,6}$" onChange={(value, passed) => onChange('salary', value, passed)} formatter={numberFormatter} unformatter={numberUnformatter} maxLength="7" />
+    </div>
+    <div>
+      <label htmlFor="allowances">Allowances</label>
+      <FilteredInput type="text" id="allowances" name="allowances" value='1.000' filterPattern="^\d{0,6}$" validatePattern="^\d{1,6}$" onChange={(value, passed) => onChange('allowances', value, passed)} formatter={numberFormatter} unformatter={numberUnformatter} maxLength="7" />
     </div>
   </form>, document.getElementById("root")
 );
@@ -35,10 +39,10 @@ function onChange(id, value, passed) {
     input.classList.add('error');
 }
 
-function salaryFormatter(value) {
+function numberFormatter(value) {
   return value.length > 0 ? numeral(Number.parseInt(value, 10)).format('0,0') : '';
 }
 
-function salaryUnformatter(value) {
+function numberUnformatter(value) {
   return value.replace(',', '');
 }

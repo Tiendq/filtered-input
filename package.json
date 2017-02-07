@@ -1,6 +1,6 @@
 {
   "name": "filtered-input",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A simple input that only accepts characters based on a Regex pattern",
   "main": "dist/filtered-input.js",
   "repository": {
