@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import validator from 'validator';
 
 class FilteredInput extends React.Component {
@@ -47,13 +48,13 @@ class FilteredInput extends React.Component {
 }
 
 FilteredInput.propTypes = {
-  type: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string,
-  filterPattern: React.PropTypes.string.isRequired,
-  validatePattern: React.PropTypes.string,
-  formatter: React.PropTypes.func,
-  unformatter: React.PropTypes.func,
-  onChange: React.PropTypes.func
+  type: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  filterPattern: PropTypes.string.isRequired,
+  validatePattern: PropTypes.string,
+  formatter: PropTypes.func,
+  unformatter: PropTypes.func,
+  onChange: PropTypes.func
 };
 
 export default FilteredInput;
