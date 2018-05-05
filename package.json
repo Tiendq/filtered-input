@@ -21,27 +21,27 @@
     "watch": "webpack --progress --colors --watch"
   },
   "dependencies": {
-    "validator": "^6.2.0"
+    "validator": "^10.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
-    "babel-eslint": "^7.1.1",
-    "babel-jest": "^18.0.0",
-    "babel-loader": "^6.2.10",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
-    "eslint": "^3.19.0",
-    "eslint-loader": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.8.0",
-    "jest": "^18.0.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.3",
     "numeral": "^2.0.4",
     "prop-types": "^15.5.7",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
-    "webpack": "^1.14.0"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.3.2",
+    "webpack": "^4.7.0"
   }
 }
