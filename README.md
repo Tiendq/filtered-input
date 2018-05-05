@@ -1,4 +1,6 @@
 # filtered-input
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Tiendq/filtered-input.svg)](https://greenkeeper.io/)
 A simple input that only accepts characters based on a Regex pattern. My intention is just limiting characters could be entered into an input field, no masking capability, no formatting etc.
 
 ## Usage
